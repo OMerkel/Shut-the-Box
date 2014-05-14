@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+<head profile='http://dublincore.org/documents/dcq-html/'>
+  <link rel='icon' href='img/icons/favicon.ico' type='image/x-icon' />
+  <link rel='schema.DC' href='http://purl.org/dc/elements/1.1/' />
+  <link rel='schema.DCTERMS' href='http://purl.org/dc/terms/' />
+  <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+  <meta charset='UTF-8' />
+  <meta name='AUTHOR' content='Oliver Merkel' />
+  <meta name='COPYRIGHT' content='Oliver Merkel' />
+  <meta name='DC.creator' content='Oliver Merkel' />
+  <meta name='DC.contributor' content='Oliver Merkel' />
+  <meta name='DC.rights' content="
+See file named LICENSE being part of the repository.
+
+Copyright (c) 2014
+@author Oliver Merkel, Merkel(dot)Oliver(at)web(dot)de.
+All rights reserved.
+
+Logos, brands, and trademarks belong to their respective owners.
+
+All source code also including code parts written in HMTL, Javascript, CSS, Python is under MIT License.
+
+The MIT License (MIT)
+
+Copyright (c) 2014 Oliver Merkel, Merkel(dot)Oliver(at)web(dot)de
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the &quot;Software&quot;), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+the Software, and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+If not otherwise stated all game graphics (independent of its format) are licensed under
+    http://creativecommons.org/licenses/by-nc-sa/4.0
+    Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+" />
+  <title>Shut the Box</title>
+  <meta name='apple-mobile-web-app-capable' content='yes' />
+  <meta name='apple-mobile-web-app-status-bar-style' content='black' />
+  <link rel='apple-touch-icon' href='img/icons/shutthebox128.png' />
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'
+    name='viewport' />
+  <link rel='stylesheet' type='text/css' href='thirdparty/jquery.mobile-1.4.5/jquery.mobile-1.4.5.css' />
+  <link rel='stylesheet' type='text/css' href='css/index.css' />
+  <script src='thirdparty/jquery-2.2.4.js' type='text/javascript'></script>
+  <script src='thirdparty/jquery.mobile-1.4.5/jquery.mobile-1.4.5.js' type='text/javascript'></script>
+  <script src='js/hmi.js' type='text/javascript' defer></script>
+</head>
+<body>
+<div data-role='page' data-theme='b' id='game-page'
+  class='mybackground'>
+  <div data-role='header' data-position='fixed'>
+    <center>Shut the Box</center>
+    <a href='#left-panel' id='customMenu' class='customMenu'
+      data-icon='custom' data-iconpos='notext'>Menu</a>
+  </div><!-- /header -->
+  <div role='main' class='ui-content' style='padding-top: 0px;'>
+    <div id='game-region' class='mycontent ui-field-contain'>
+      <noscript>
+        <p>This HTML5 application depends on enabled Javascript capabilities in your browser.</p>
+        <p>Please consider enabling Javascript if disabled through settings.</p>
+      </noscript>
+      <div id='flaps' style='position:absolute;top:5px;left:10%;'>
+        <select id='flap-9' data-role='flipswitch'>
+          <option value='off'>9</option>
+          <option value='on'>9</option>
+        </select><br />
+        <select id='flap-8' data-role='flipswitch'>
+          <option value='off'>8</option>
+          <option value='on'>8</option>
+        </select><br />
+        <select id='flap-7' data-role='flipswitch'>
+          <option value='off'>7</option>
+          <option value='on'>7</option>
+        </select><br />
+        <select id='flap-6' data-role='flipswitch'>
+          <option value='off'>6</option>
+          <option value='on'>6</option>
+        </select><br />
+        <select id='flap-5' data-role='flipswitch'>
+          <option value='off'>5</option>
+          <option value='on'>5</option>
+        </select><br />
+        <select id='flap-4' data-role='flipswitch'>
+          <option value='off'>4</option>
+          <option value='on'>4</option>
+        </select><br />
+        <select id='flap-3' data-role='flipswitch'>
+          <option value='off'>3</option>
+          <option value='on'>3</option>
+        </select><br />
+        <select id='flap-2' data-role='flipswitch'>
+          <option value='off'>2</option>
+          <option value='on'>2</option>
+        </select><br />
+        <select id='flap-1' data-role='flipswitch'>
+          <option value='off'>1</option>
+          <option value='on'>1</option>
+        </select>
+      </div>
+      <div style='position:absolute; top:100px; left:45%;'>
+        <img id='die1' src='img/1w6-3.png' style='visibility: hidden;' /><br/>
+        <img id='die2' src='img/1w6-3.png' style='visibility: hidden;' />
+      </div>
+    </div>
+  </div><!-- /content -->
+  <div data-role='panel' id='left-panel' data-position='left'
+    data-display='overlay' data-theme='b'>
+    <ul data-role='listview' data-theme='b' data-divider-theme='d'
+      data-icon='false' data-global-nav='demos' class='jqm-list'>
+      <li data-icon='back' data-rel='close'><a href='#'>Back</a></li>
+      <li data-role='list-divider'>&nbsp;</li>
+      <li data-icon='star'><a id='new'>New</a></li>
+      <input type='checkbox' name='single' id='single'>
+      <label for='single'>Single die</label>
+      <li data-icon='action'><a href='#rules-page' data-rel='page'
+        data-transition='pop'>Rules&#8230;</a></li>
+      <li data-icon='info'><a href='#about-page' data-rel='page'
+        data-transition='pop'>About&#8230;</a></li>
+    </ul>
+  </div><!-- /panel -->
+</div><!-- /page -->
+
+<div data-role='page' data-theme='b' id='rules-page'>
+  <div data-role='header'>
+    <a href='#' data-rel='back' id='customBackRules'
+      class='customBack ui-btn ui-icon-custom ui-btn-icon-right ui-btn-icon-notext ui-corner-all'>Back</a>
+    <h4>Shut the Box - Rules</h4>
+  </div><!-- /header -->
+  <div role='main' class='ui-content'>
+    <br />
+    <p><b>Shut the Box</b> is a famous traditional pub game.
+      Shut the Box is played in different variants and no organization is known
+      targeting standardization of rule variants for the game. Thus if
+      playing <em>Shut the Box</em> with others you should first try
+      to find agreement and commitment on rules. If in doubt I recommend
+      to prefer and apply the locally played rules.</p>
+    <div data-role='collapsible-set' data-theme='c' data-content-theme='d'
+      data-iconpos='right' data-collapsed-icon='arrow-l' data-expanded-icon='arrow-d'>
+    <div data-role='collapsible'>
+      <h3>Gaming Material</h3>
+      <p>The <em>box</em> consists of a set of <em>flaps</em> being open at the
+        beginning of the game. Flaps indicate their represented value by
+        labels showing numbers. The box is shut as soon as all flaps
+        are closed. This <em>Shut the Box</em> game uses flaps ranged from <em>value
+        one to nine.</em></p>
+      <p>Most <em>Shut the Box</em> variants are played with <em>two six-sided dice</em>.</p>
+    </div><!-- collapsible -->
+    <div data-role='collapsible'>
+      <h3>Rules</h3>
+      <p>The <b>Shut the Box</b> application is intended to be less restrictive.
+      Such that no specific rules are really forced to be applied. At any
+      time you can take back an action like open a just closed flap and
+      perform a different choice. If in need you can use a single die
+      or two dice, roll again, switch to the menu and look up any rule
+      variants in between game play.</p>
+
+      <div data-role='collapsible-set' data-theme='c' data-content-theme='d'
+        data-iconpos='right' data-collapsed-icon='arrow-l' data-expanded-icon='arrow-d'>
+      <div data-role='collapsible'>
+        <h3>Objective</h3>
+        <ul>
+          <li>Objective is to minimize the own penalty score. The
+            player with lowest penalty score wins.</li>
+          <li>Each player keeps rolling dice and scoring these
+            iteratively until&#8230;</li>
+          <ul>
+            <li>either the total value of dice can not be used
+              to close remaining open flaps. Then the next player
+              continues with all flaps opened up again.</li>
+            <li>or finally all flaps are closed. The player shutting the
+              box this way wins immediately.</li>
+          </ul>
+        </ul>
+      </div><!-- collapsible -->
+
+      <div data-role='collapsible'>
+        <h3>Penalty Score</h3>
+        <p>The penalty score is the total of all remaining open flaps'
+            values summed up. As long as no player manages to shut the
+            box completely the remaining open flaps indicate the
+            players penalty score.</p>
+      </div><!-- collapsible -->
+
+      <div data-role='collapsible'>
+        <h3>Recommended Variant</h3>
+        <ul>
+          <li>Player rolls the dice and adds up the shown total value.</li>
+          <li>Any combination of remaining open flaps can now be closed.
+            Their values summed up have to match the total value of the
+            roll exactly.</li>
+          <li>As soon as flaps 7, 8, and 9 are closed the player may
+            decide on each roll to roll a single die or alternatively
+            both dice.</li>
+        </ul>
+      </div><!-- collapsible -->
+
+      <div data-role='collapsible'>
+        <h2>More Variants</h2>
+        <h3>Avoid High Sums</h3>
+        <ul>
+          <li>You may decide to use the amount of open flaps as a score
+            rather then the total sum of their values.</li>
+          <li>Lower amount of open flaps wins.</li>
+        </ul>
+        <h3>More Restrictive Single Die</h3>
+        <ul>
+          <li>The player may decide on each roll to roll a single die
+            or alternatively both dice only in case that the overall sum
+            of values for remaining open flaps equals 6 or less.</li>
+        </ul>
+        <h3>Two Dice Only</h3>
+        <ul>
+          <li>Player must always use two dice.</li>
+          <li>Thus a player has to end the turn in case there is only
+            flap #1 remaining unless no other rule is applied.</li>
+        </ul>
+        <h3>Exact Match</h3>
+        <ul>
+          <li>Player rolls the dice and adds up the shown total value.</li>
+          <li>Just open flaps with the exact value of a die or the flap
+            matching the sum can now be closed. The player is not allowed
+            to use any other combination of remaining open flaps even if the
+            sum does match.</li>
+          <li>Player may only continue if all dice rolled are scored.</li>
+        </ul>
+        <h3>Score Single Die is Enough</h3>
+        <ul>
+          <li>Player rolls the dice and adds up the shown total value.</li>
+          <li>Just open flaps with the exact value of a die or the flap
+            matching the sum can now be closed. The player is not allowed
+            to use any other combination of remaining open flaps even if the
+            sum does match.</li>
+          <li>Player may continue as long as at least one die of a roll
+            can be scored.</li>
+          <li>On mutual agreement it might be mandatory or optional to
+            score a second die if possible. Meaning although a second die
+            could be scored the player may decide freely not to score it
+            if scoring second die is optional.</li>
+        </ul>
+        <h3>Thai Style</h3>
+        <ul>
+          <li>Player must exactly and can only score a single flap per roll.</li>
+          <li>Player rolls the dice and adds up the shown total value.</li>
+          <li>Just open flaps with the exact value of a die or the flap
+            matching the sum can now be closed. The player is not allowed
+            to use any other combination of remaining open flaps even if the
+            sum does match.</li>
+        </ul>
+        <h3>Multiple Fixed Rounds</h3>
+        <ul>
+          <li>The game continues for a defined amount of rounds to
+            be played.</li>
+          <li>Penalty scores are summed up per player.</li>
+        </ul>
+        <h3>Defined Maximum Penalty</h3>
+        <ul>
+          <li>The game continues in rounds to be played.</li>
+          <li>Penalty scores are summed up per player.</li>
+          <li>Player continues as long as his overall penalty
+            does not exceed a previously agreed maximum penalty
+            score, e.g. maximum penalty score 45.</li>
+          <li>Last man standing wins.</li>
+        </ul>
+        <h3>Flap Numbers are Penalty Digits</h3>
+        <ul>
+          <li>Remaining flap numbers represent penalty digits ordered
+            from low to high. <em>Sample: if flap #2, #5, and number #7
+            remain open then the penalty score is 257.</em></li>
+        </ul>
+      </div><!-- collapsible -->
+      </div><!-- collapsible-set -->
+
+    </div><!-- collapsible -->
+    </div><!-- collapsible-set -->
+    <a href='#' data-role='button' data-icon='back'
+      data-rel='back'>Back</a>
+  </div><!-- /main -->
+</div><!-- /page -->
+
+<div data-role='page' data-theme='b' id='about-page'>
+  <div data-role='header'>
+    <a href='#' data-rel='back' id='customBackAbout'
+      class='customBack ui-btn ui-icon-custom ui-btn-icon-right ui-btn-icon-notext ui-corner-all'>Back</a>
+    <h4>About Shut the Box</h4>
+  </div><!-- /header -->
+  <div role='main' class='ui-content'>
+    <br />
+    <h3>Legal</h3>
+    <figure class='diagram' style='float: right;'>
+      <img src='img/oliver-sliabh_liag.jpg' />
+      <figcaption>Oliver Merkel, Slieve League (Gaeilge: Sliabh Liag) at the One Man's Path, Contae Dh&uacute;n na nGall, &Eacute;ire, <a rel='license'
+        href='http://creativecommons.org/licenses/by-nc-nd/4.0/'
+        target='_blank'>cc-by-nc-nd 4.0</a>.</figcaption>
+    </figure>
+    <p>Copyright (c) 2014<br />
+    <em>@author</em> Oliver Merkel, Merkel(dot) Oliver(at) web(dot) de.<br />
+    All rights reserved.<br />
+    Logos, brands, and trademarks belong to their respective owners.</p>
+    <p>All source code also including code parts written in HMTL, Javascript, CSS is under MIT License.</p>
+    <h4>The MIT License (MIT)</h4>
+    <p>Copyright (c) 2014 Oliver Merkel, Merkel(dot) Oliver(at) web(dot)de</p>
+
+    <p>Permission is hereby granted, free of charge, to any person obtaining a copy of
+    this software and associated documentation files (the &quot;Software&quot;), to deal in
+    the Software without restriction, including without limitation the rights to
+    use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+    the Software, and to permit persons to whom the Software is furnished to do so,
+    subject to the following conditions:</p>
+
+    <p>The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.</p>
+
+    <p>THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+    FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+    COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+    IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+    CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+
+    <p>If not otherwise stated all game graphics (independent of its format) are licensed under
+      <br /><a rel='license' href='http://creativecommons.org/licenses/by-nc-sa/4.0'
+      target='_blank'><img alt='Creative Commons License' style='border-width:0'
+      src='img/icons/cc_by_nc_sa.png' /></a><br />Images are licensed under a
+      <a rel='license' href='http://creativecommons.org/licenses/by-nc-sa/4.0'
+      target='_blank'>Creative Commons Attribution-NonCommercial-ShareAlike 4.0
+      International License</a>.
+    </p>
+    <div data-role='collapsible-set' data-theme='c' data-content-theme='d'
+      data-iconpos='right' data-collapsed-icon='arrow-l' data-expanded-icon='arrow-d'>
+    <div data-role='collapsible'>
+      <h4>Shut the Box Principles and Concepts</h4>
+      <p>The basic ruleset of Shut the Box is in the public domain
+        due to its age and unknown authorship. It is claimed to be
+        a traditional Irish Pub game. None the less please mind that
+        certain variants are covered by legal rights concerning trademarks,
+        game designs and possibly authorship on an exact ruleset for
+        commerical versions.</p>
+    </div><!-- collapsible -->
+    <div data-role='collapsible'>
+      <h4>Third Party Code Licenses</h4>
+      <p>This <b>Shut the Box</b> implementation uses unmodified
+      independent code libraries provided by <em>third parties</em>.
+      Since their licenses might vary the corresponding information is
+      <em>externally linked</em> below. Thus <em>these external links</em>
+      will enable you to reproduce any copyright notice,
+      any related list of conditions, disclaimers, and especially
+      the copyright holders and authors of the corresponding third
+      party functionality.</p>
+      <a href='https://github.com/jquery/jquery' data-role='button' data-theme='c'
+        rel='external' target='_blank' type='text/html'
+        title='jQuery - Repository'>
+        <img src='thirdparty/jquery-favicon.ico' width='16' height='16' />
+        jQuery: MIT</a>
+      <a href='https://github.com/jquery/jquery-mobile' data-role='button' data-theme='c'
+        rel='external' target='_blank' type='text/html'
+        title='jQuery Mobile - Repository'>
+        <img src='thirdparty/jquery.mobile-1.4.5/demos/favicon.ico' width='16' height='16' />
+        jQuery Mobile: MIT</a>
+    </div><!-- collapsible -->
+    </div><!-- collapsible-set -->
+    <a href='#' data-role='button' data-icon='back'
+      data-rel='back'>Back</a>
+  </div><!-- /content -->
+</div><!-- /page -->
+</body>
+</html>

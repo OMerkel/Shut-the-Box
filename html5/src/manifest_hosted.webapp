@@ -1,0 +1,23 @@
+{
+  "version": "0.2",
+  "name": "Shut the Box",
+  "description": "Famous traditional pub game Shut the Box",
+  "launch_path": "/Shut-the-Box/html5/src/index.html",
+  "orientation": "portrait-primary",
+  "icons": {
+    "16": "/Shut-the-Box/html5/src/img/icons/shutthebox16.png",
+    "32": "/Shut-the-Box/html5/src/img/icons/shutthebox32.png",
+    "48": "/Shut-the-Box/html5/src/img/icons/shutthebox48.png",
+    "60": "/Shut-the-Box/html5/src/img/icons/shutthebox60.png",
+    "64": "/Shut-the-Box/html5/src/img/icons/shutthebox64.png",
+    "90": "/Shut-the-Box/html5/src/img/icons/shutthebox90.png",
+    "120": "/Shut-the-Box/html5/src/img/icons/shutthebox120.png",
+    "128": "/Shut-the-Box/html5/src/img/icons/shutthebox128.png",
+    "256": "/Shut-the-Box/html5/src/img/icons/shutthebox256.png"
+  },
+  "developer": {
+    "name": "Oliver Merkel",
+    "url": "https://github.com/OMerkel/Shut-the-Box"
+  },
+  "installs_allowed_from": ["*"]
+}

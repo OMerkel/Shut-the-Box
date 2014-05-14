@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+<head profile='http://dublincore.org/documents/dcq-html/'>
+  <link rel='icon' href='img/icons/favicon.ico' type='image/x-icon' />
+  <link rel='schema.DC' href='http://purl.org/dc/elements/1.1/' />
+  <link rel='schema.DCTERMS' href='http://purl.org/dc/terms/' />
+  <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+  <meta charset='UTF-8' />
+  <meta name='AUTHOR' content='Oliver Merkel' />
+  <meta name='COPYRIGHT' content='Oliver Merkel' />
+  <meta name='DC.creator' content='Oliver Merkel' />
+  <meta name='DC.contributor' content='Oliver Merkel' />
+  <meta name='DC.rights' content="
+See file named LICENSE being part of the repository.
+
+Copyright (c) 2014
+@author Oliver Merkel, Merkel(dot)Oliver(at)web(dot)de.
+All rights reserved.
+
+Logos, brands, and trademarks belong to their respective owners.
+
+All source code also including code parts written in HMTL, Javascript, CSS, Python is under MIT License.
+
+The MIT License (MIT)
+
+Copyright (c) 2014 Oliver Merkel, Merkel(dot)Oliver(at)web(dot)de
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the &quot;Software&quot;), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+the Software, and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+If not otherwise stated all game graphics (independent of its format) are licensed under
+    http://creativecommons.org/licenses/by-nc-sa/4.0
+    Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+" />
+  <title>Shut the Box</title>
+  <meta name='apple-mobile-web-app-capable' content='yes' />
+  <meta name='apple-mobile-web-app-status-bar-style' content='black' />
+  <link rel='apple-touch-icon' href='img/icons/shutthebox128.png' />
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'
+    name='viewport' />
+  <link rel='stylesheet' type='text/css' href='thirdparty/jquery.mobile-1.4.5/jquery.mobile-1.4.5.css' />
+  <link rel='stylesheet' type='text/css' href='css/index.css' />
+  <script src='thirdparty/jquery-2.2.4.js' type='text/javascript'></script>
+  <script src='thirdparty/jquery.mobile-1.4.5/jquery.mobile-1.4.5.js' type='text/javascript'></script>
+  <script src='js/hmi.js' type='text/javascript' defer></script>
+</head>
+<body>
+<div data-role='page' data-theme='b' id='game-page'
+  class='mybackground'>
+  <div data-role='header' data-position='fixed'>
+    <center>Shut the Box</center>
+    <a href='#left-panel' id='customMenu' class='customMenu'
+      data-icon='custom' data-iconpos='notext'>Menü</a>
+  </div><!-- /header -->
+  <div role='main' class='ui-content' style='padding-top: 0px;'>
+    <div id='game-region' class='mycontent ui-field-contain'>
+      <noscript>
+        <p>This HTML5 application depends on enabled Javascript capabilities in your browser.</p>
+        <p>Please consider enabling Javascript if disabled through settings.</p>
+      </noscript>
+      <div id='flaps' style='position:absolute;top:5px;left:10%;'>
+        <select id='flap-9' data-role='flipswitch'>
+          <option value='off'>9</option>
+          <option value='on'>9</option>
+        </select><br />
+        <select id='flap-8' data-role='flipswitch'>
+          <option value='off'>8</option>
+          <option value='on'>8</option>
+        </select><br />
+        <select id='flap-7' data-role='flipswitch'>
+          <option value='off'>7</option>
+          <option value='on'>7</option>
+        </select><br />
+        <select id='flap-6' data-role='flipswitch'>
+          <option value='off'>6</option>
+          <option value='on'>6</option>
+        </select><br />
+        <select id='flap-5' data-role='flipswitch'>
+          <option value='off'>5</option>
+          <option value='on'>5</option>
+        </select><br />
+        <select id='flap-4' data-role='flipswitch'>
+          <option value='off'>4</option>
+          <option value='on'>4</option>
+        </select><br />
+        <select id='flap-3' data-role='flipswitch'>
+          <option value='off'>3</option>
+          <option value='on'>3</option>
+        </select><br />
+        <select id='flap-2' data-role='flipswitch'>
+          <option value='off'>2</option>
+          <option value='on'>2</option>
+        </select><br />
+        <select id='flap-1' data-role='flipswitch'>
+          <option value='off'>1</option>
+          <option value='on'>1</option>
+        </select>
+      </div>
+      <div style='position:absolute; top:100px; left:45%;'>
+        <img id='die1' src='img/1w6-3.png' style='visibility: hidden;' /><br/>
+        <img id='die2' src='img/1w6-3.png' style='visibility: hidden;' />
+      </div>
+    </div>
+  </div><!-- /content -->
+  <div data-role='panel' id='left-panel' data-position='left'
+    data-display='overlay' data-theme='b'>
+    <ul data-role='listview' data-theme='b' data-divider-theme='d'
+      data-icon='false' data-global-nav='demos' class='jqm-list'>
+      <li data-icon='back' data-rel='close'><a href='#'>Zurück</a></li>
+      <li data-role='list-divider'>&nbsp;</li>
+      <li data-icon='star'><a id='new'>Neu</a></li>
+      <input type='checkbox' name='single' id='single'>
+      <label for='single'>Einzelner Würfel</label>
+      <li data-icon='action'><a href='#rules-page' data-rel='page'
+        data-transition='pop'>Regeln&#8230;</a></li>
+      <li data-icon='info'><a href='#about-page' data-rel='page'
+        data-transition='pop'>Info&#8230;</a></li>
+    </ul>
+  </div><!-- /panel -->
+</div><!-- /page -->
+
+<div data-role='page' data-theme='b' id='rules-page'>
+  <div data-role='header'>
+    <a href='#' data-rel='back' id='customBackRules'
+      class='customBack ui-btn ui-icon-custom ui-btn-icon-right ui-btn-icon-notext ui-corner-all'>Zurück</a>
+    <h4>Shut the Box - Regeln</h4>
+  </div><!-- /header -->
+  <div role='main' class='ui-content'>
+    <br />
+    <p><b>Shut the Box</b> ist ein beliebtes traditionelles Spiel in irischen/englischen Pubs.
+      Shut the Box wird in unterschiedlichen Varianten gespielt. Es gibt keine Organisation, die
+      einen Standard für die Spielregeln anstrebt. Wenn daher <em>Shut the Box</em> mit anderen
+      gemeinsam gespielt wird, ist es oft nötig, sich auf ein Regelwerk zu einigen, bzw. diesem
+      gemeinsam zuzustimmen. Im Zweifel gilt die Empfehlung, lokale Hausregeln zu erfragen
+      und diese anzuwenden.</p>
+    <div data-role='collapsible-set' data-theme='c' data-content-theme='d'
+      data-iconpos='right' data-collapsed-icon='arrow-l' data-expanded-icon='arrow-d'>
+    <div data-role='collapsible'>
+      <h3>Spielmaterial</h3>
+      <p>Die <em>Box</em> besteht aus <em>Klappen</em>, die zu Spielbeginn alle geöffnet sind.
+        Klappen zeigen ihren eigenen Wert durch auf ihnen abgebildete Nummern. Die Box gilt als
+        geschlossen, sobald alle Klappen geschlossen wurden. Dieses <em>Shut the Box</em>-Spiel
+        zeigt Klappen mit den Werten von eins bis neun.</em></p>
+      <p>Die meisten <em>Shut the Box</em>-Varianten werden mit <em>zwei sechsseitigen
+        Würfeln</em> gespielt.</p>
+    </div><!-- collapsible -->
+    <div data-role='collapsible'>
+      <h3>Regeln</h3>
+      <p>Die <b>Shut the Box</b>-Applikation soll hinsichtlich Bedienung bewusst wenig
+        einschränkend sein. Man wird nicht wirklich zur Anwendung bestimmter Regeln gezwungen.
+        Jederzeit kann man alle durchgeführten Aktionen rückgängig machen, wie etwa eine gerade
+        zuvor geschlossene Klappe doch wieder zu öffnen und sich dann zu anderen Aktionen zu
+        entscheiden. Falls es gewollt oder nötig ist, kann man entweder einen einzelnen Würfel
+        oder doch zwei Würfel nehmen, nochmals würfeln, ins Menü wechseln, um etwa eine der
+        möglichen Regelvarianten während des Spiels nachzuschlagen.</p>
+      <div data-role='collapsible-set' data-theme='c' data-content-theme='d'
+        data-iconpos='right' data-collapsed-icon='arrow-l' data-expanded-icon='arrow-d'>
+      <div data-role='collapsible'>
+        <h3>Spielziel</h3>
+        <ul>
+          <li>Spielziel ist es, möglichst wenig Strafpunkte zu erhalten. Der Spieler
+            mit der niedrigsten Anzahl an Strafpunkten gewinnt.</li>
+          <li>Jeder Spieler würfelt und punktet die Würfelergebnisse ununterbrochen
+            weiter, bis&#8230;</li>
+          <ul>
+            <li>entweder die Gesamtsumme der Würfel nicht mehr zum Schließen weiterer noch
+              offener Klappen genutzt werden kann (Danach spielt der nächste Spieler, indem
+              alle Klappen wieder geöffnet werden)</li>
+            <li>oder alle Klappen geschlossen wurden. Der Spieler, der die Box schließt,
+              also alle Klappen schließt, gewinnt augenblicklich das laufende Spiel,
+              selbst wenn andere Spieler noch nicht am Zug waren.</li>
+          </ul>
+        </ul>
+      </div><!-- collapsible -->
+
+      <div data-role='collapsible'>
+        <h3>Strafpunkte</h3>
+        <p>Die Strafpunkte ergeben sich aus der Summe aller Nummernwerte verbleibender noch
+          offener Klappen. Solange es kein Spieler schafft, die Box komplett zu schließen,
+          zeigen die verbleibenden offenen Klappen diese Strafpunkte an.</p>
+      </div><!-- collapsible -->
+
+      <div data-role='collapsible'>
+        <h3>Empfohlene Regelvariante</h3>
+        <ul>
+          <li>Der Spieler würfelt und zählt die Würfelwerte zusammen.</li>
+          <li>Jegliche Kombination verbleibender offener Klappen kann daraufhin
+            geschlossen werden. Dabei müssen deren zusammengezählte Werte diesem
+            Gesamtwürfelwert exakt entsprechen.</li>
+          <li>Sobald die Klappen mit Werten 7, 8 und 9 geschlossen sind, kann der
+            Spieler sich bei jedem Würfelwurf dazu entscheiden, entweder einen
+            einzelnen Würfel oder doch wieder beide Würfel zu werfen.</li>
+        </ul>
+      </div><!-- collapsible -->
+
+      <div data-role='collapsible'>
+        <h2>Mehr Varianten</h2>
+        <h3>Vermeidung hoher Summen</h3>
+        <ul>
+          <li>Die Strafpunkte entsprechen hierbei der Anzahl noch offener Klappen statt
+            der Summe ihrer Werte.</li>
+          <li>Die kleinere Anzahl offener Klappen gewinnt.</li>
+        </ul>
+        <h3>Mehr eingeschränkter Einzelwürfel</h3>
+        <ul>
+          <li>Der Spieler darf bei jedem Wurf entscheiden, einen einzelnen
+            Würfel oder beide Würfel zu nutzen, falls die verbleibende
+            Gesamtsumme aller Werte noch offener Klappen noch 6 oder
+            weniger beträgt.</li>
+        </ul>
+        <h3>Nur zwei Würfel</h3>
+        <ul>
+          <li>Der Spieler kann nur mit zwei Würfeln werfen.</li>
+          <li>Dies bedeutet auch, dass der Spielzug endet, falls nur noch
+            die Klappe mit dem Wert #1 verbleibt (solange keine andere
+            verwendete Regel im Widerspruch steht), da mit zwei Würfeln
+            grundsätzlich mehr als eine Eins erwürfelt wird.</li>
+        </ul>
+        <h3>Genau passend</h3>
+        <ul>
+          <li>Der Spieler würfelt und bildet die Gesamtsumme des Wurfs.</li>
+          <li>Es dürfen nur genau die Klappen geschlossen werden, die dem
+            Wert der Gesamtsumme oder der exakten Werte der einzelnen Würfel
+            entsprechen. Der Spieler darf nicht irgendwelche anderen
+            Klappenkombinationen wählen, auch wenn diese in Summe gleichen.</li>
+          <li>Der Spieler kann nur dann weitermachen, wenn alle Würfel
+            gewertet, bzw. verwendet wurden.</li>
+        </ul>
+        <h3>Werten eines Würfels ist ausreichend</h3>
+        <ul>
+          <li>Der Spieler würfelt und bildet die Gesamtsumme des Wurfs.</li>
+          <li>Es dürfen nur genau die Klappen geschlossen werden, die dem
+            Wert der Gesamtsumme oder der exakten Werte der einzelnen Würfel
+            entsprechen. Der Spieler darf nicht irgendwelche anderen
+            Klappenkombinationen wählen, auch wenn diese in Summe gleichen.</li>
+          <li>Der Spieler kann weitermachen, solange mindestens ein Würfel
+            gewertet, bzw. verwendet wurde.</li>
+          <li>Man kann aushandeln, ob eine Verwertung des zweiten Würfels
+            optional oder notwendig ist, falls dieser genutzt werden könnte,
+            also noch passt. Optional bedeutet, dass es dem Spieler freigestellt
+            ist, ob ein noch passender Würfel gewertet wird oder aus
+            strategischen Gründen verfällt und weitergewürfelt wird.</li>
+        </ul>
+        <h3>Thai Stil</h3>
+        <ul>
+          <li>Der Spieler muss genau und kann auch nur eine einzelne
+            Klappe pro Wurf schließen.</li>
+          <li>Der Spieler würfelt und bildet die Gesamtsumme des Wurfs.</li>
+          <li>Es dürfen nur genau die Klappen geschlossen werden, die dem
+            Wert der Gesamtsumme oder der exakten Werte der einzelnen Würfel
+            entsprechen. Der Spieler darf nicht irgendwelche anderen
+            Klappenkombinationen wählen, auch wenn diese in Summe gleichen.</li>
+        </ul>
+        <h3>Feste Rundenzahl</h3>
+        <ul>
+          <li>Es wird über eine vorgegebene vereinbarte Anzahl von
+            Spielrunden gespielt.</li>
+          <li>Über die Strafpunkte pro Spieler wird jeweils die Summe
+            gebildet.</li>
+        </ul>
+        <h3>Limit für Strafpunkte</h3>
+        <ul>
+          <li>Es wird über mehrere Spielrunden weiter gespielt.</li>
+          <li>Über die Strafpunkte pro Spieler wird jeweils die Summe
+            gebildet.</li>
+          <li>Solange die Gesamtsumme der Strafpunkte eines Spielers
+            ein zuvor festgelegtes maximales Limit nicht überschreitet,
+            darf der Spieler weiter mitspielen. Bei Überschreiten
+            scheidet der Spieler aus, z.B. bei einem Limit von 45
+            Strafpunkten.</li>
+          <li>Der letzte verbleibende Spieler gewinnt.</li>
+        </ul>
+        <h3>Klappenwerte als Ziffern für Strafpunkte</h3>
+        <ul>
+          <li>Die verbleibenden Klappenwerte werden wie Ziffern für
+            die Strafpunkte gelesen (geordnet von niedriger zur hohen
+            Ziffer). <em>Beispiel: Falls die Klappen #2, #5 und #7
+            verbleiben, betragen die Strafpunkte 257.</em></li>
+        </ul>
+      </div><!-- collapsible -->
+      </div><!-- collapsible-set -->
+
+    </div><!-- collapsible -->
+    </div><!-- collapsible-set -->
+    <a href='#' data-role='button' data-icon='back'
+      data-rel='back'>Zurück</a>
+  </div><!-- /main -->
+</div><!-- /page -->
+
+<div data-role='page' data-theme='b' id='about-page'>
+  <div data-role='header'>
+    <a href='#' data-rel='back' id='customBackAbout'
+      class='customBack ui-btn ui-icon-custom ui-btn-icon-right ui-btn-icon-notext ui-corner-all'>Zurück</a>
+    <h4>About Shut the Box</h4>
+  </div><!-- /header -->
+  <div role='main' class='ui-content'>
+    <br />
+    <h3>Legal</h3>
+    <figure class='diagram' style='float: right;'>
+      <img src='img/oliver-sliabh_liag.jpg' />
+      <figcaption>Oliver Merkel, Slieve League (Gaeilge: Sliabh Liag) at the One Man's Path, Contae Dh&uacute;n na nGall, &Eacute;ire, <a rel='license'
+        href='http://creativecommons.org/licenses/by-nc-nd/4.0/'
+        target='_blank'>cc-by-nc-nd 4.0</a>.</figcaption>
+    </figure>
+    <p>Copyright (c) 2014<br />
+    <em>@author</em> Oliver Merkel, Merkel(dot) Oliver(at) web(dot) de.<br />
+    All rights reserved.<br />
+    Logos, brands, and trademarks belong to their respective owners.</p>
+    <p>All source code also including code parts written in HMTL, Javascript, CSS is under MIT License.</p>
+    <h4>The MIT License (MIT)</h4>
+    <p>Copyright (c) 2014 Oliver Merkel, Merkel(dot) Oliver(at) web(dot)de</p>
+
+    <p>Permission is hereby granted, free of charge, to any person obtaining a copy of
+    this software and associated documentation files (the &quot;Software&quot;), to deal in
+    the Software without restriction, including without limitation the rights to
+    use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+    the Software, and to permit persons to whom the Software is furnished to do so,
+    subject to the following conditions:</p>
+
+    <p>The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.</p>
+
+    <p>THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+    FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+    COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+    IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+    CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+
+    <p>If not otherwise stated all game graphics (independent of its format) are licensed under
+      <br /><a rel='license' href='http://creativecommons.org/licenses/by-nc-sa/4.0'
+      target='_blank'><img alt='Creative Commons License' style='border-width:0'
+      src='img/icons/cc_by_nc_sa.png' /></a><br />Images are licensed under a
+      <a rel='license' href='http://creativecommons.org/licenses/by-nc-sa/4.0'
+      target='_blank'>Creative Commons Attribution-NonCommercial-ShareAlike 4.0
+      International License</a>.
+    </p>
+    <div data-role='collapsible-set' data-theme='c' data-content-theme='d'
+      data-iconpos='right' data-collapsed-icon='arrow-l' data-expanded-icon='arrow-d'>
+    <div data-role='collapsible'>
+      <h4>Shut the Box Principles and Concepts</h4>
+      <p>The basic ruleset of Shut the Box is in the public domain
+        due to its age and unknown authorship. It is claimed to be
+        a traditional Irish Pub game. None the less please mind that
+        certain variants are covered by legal rights concerning trademarks,
+        game designs and possibly authorship on an exact ruleset for
+        commerical versions.</p>
+    </div><!-- collapsible -->
+    <div data-role='collapsible'>
+      <h4>Third Party Code Licenses</h4>
+      <p>This <b>Shut the Box</b> implementation uses unmodified
+      independent code libraries provided by <em>third parties</em>.
+      Since their licenses might vary the corresponding information is
+      <em>externally linked</em> below. Thus <em>these external links</em>
+      will enable you to reproduce any copyright notice,
+      any related list of conditions, disclaimers, and especially
+      the copyright holders and authors of the corresponding third
+      party functionality.</p>
+      <a href='https://github.com/jquery/jquery' data-role='button' data-theme='c'
+        rel='external' target='_blank' type='text/html'
+        title='jQuery - Repository'>
+        <img src='thirdparty/jquery-favicon.ico' width='16' height='16' />
+        jQuery: MIT</a>
+      <a href='https://github.com/jquery/jquery-mobile' data-role='button' data-theme='c'
+        rel='external' target='_blank' type='text/html'
+        title='jQuery Mobile - Repository'>
+        <img src='thirdparty/jquery.mobile-1.4.5/demos/favicon.ico' width='16' height='16' />
+        jQuery Mobile: MIT</a>
+    </div><!-- collapsible -->
+    </div><!-- collapsible-set -->
+    <a href='#' data-role='button' data-icon='back'
+      data-rel='back'>Zurück</a>
+  </div><!-- /content -->
+</div><!-- /page -->
+</body>
+</html>
