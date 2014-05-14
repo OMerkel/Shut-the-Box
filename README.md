@@ -1,6 +1,11 @@
 Shut the Box
 ============
 
+* <em>Start an online</em> <b>Shut the Box</b> <em>session on</em> http://omerkel.github.io/Shut-the-Box/html5/src/
+* <em>runs in various browsers on</em>
+    * <em>desktop systems like BSDs, Linux, Win, MacOS and</em>
+    * <em>mobile platforms like Android, FirefoxOS, iOS.</em>
+
 <b>Keywords, Categories</b> <em>Dice Game, Games/Entertainment, Mobile</em>
 
 This is the famous traditional pub game Shut the Box. It is implemented for HTML5/Javascript/CSS platforms.
