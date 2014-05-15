@@ -34,11 +34,7 @@ function newGame() {
 }
 
 function toggleDiceAmount() {
-  if (single.is(':checked')) {
-    die2.hide();
-  } else {
-    die2.show();
-  }
+  roll();
 }
 
 function init() {
