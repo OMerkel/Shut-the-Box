@@ -11,9 +11,14 @@ var flap = new Array();
 var single = $('#single');
 
 function showResult() {
-  die1.css({opacity: 1.0, visibility: 'visible'});
+  var availableWidth = 400 < window.innerWidth ? 400 : window.innerWidth;
+  die1.css({opacity: 1.0,
+    visibility: 'visible',
+    width: availableWidth>>2 });
   if (!single.is(':checked')) {
-    die2.css({opacity: 1.0, visibility: 'visible'});
+    die2.css({opacity: 1.0,
+      visibility: 'visible',
+      width: availableWidth>>2 });
   }
 }
 
@@ -45,6 +50,7 @@ function init() {
   single.click(toggleDiceAmount);
   die1.click(roll);
   die2.click(roll);
+  showResult();
 }
 
-$( init );
+$(window).load( init() );
