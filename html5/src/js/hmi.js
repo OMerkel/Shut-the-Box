@@ -11,15 +11,15 @@ var flap = new Array();
 var single = $('#single');
 
 function showResult() {
-  die1.show();
+  die1.css({opacity: 1.0, visibility: 'visible'});
   if (!single.is(':checked')) {
-    die2.show();
+    die2.css({opacity: 1.0, visibility: 'visible'});
   }
 }
 
 function roll() {
-  die1.hide();
-  die2.hide();
+  die1.css({opacity: 0.0, visibility: 'hidden'});
+  die2.css({opacity: 0.0, visibility: 'hidden'});
   var die1value=Math.floor(Math.random()*6)+1;
   var die2value=Math.floor(Math.random()*6)+1;
   die1[0].src = 'img/1w6-' + die1value + '.png';
