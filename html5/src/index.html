@@ -47,6 +47,9 @@ If not otherwise stated all game graphics (independent of its format) are licens
     Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
 " />
   <title>Shut the Box</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon" href="img/icons/1w6-5-128.png" />
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'
     name='viewport' />
   <link rel='stylesheet' type='text/css' href='thirdparty/jquery.mobile-1.4.2/jquery.mobile-1.4.2.css' />
@@ -68,53 +71,51 @@ If not otherwise stated all game graphics (independent of its format) are licens
         <p>This HTML5 application depends on enabled Javascript capabilities in your browser.</p>
         <p>Please consider enabling Javascript if disabled through settings.</p>
       </noscript>
-      <table style='max-width: 400px;'>
+      <table>
       <tr>
-      <td width='50%'>
-        <select id="flap-9" data-role="flipswitch">
+        <td><select id="flap-9" data-role="flipswitch">
           <option value="off">9</option>
           <option value="on">9</option>
-        </select>
-        <select id="flap-8" data-role="flipswitch">
-          <option value="off">8</option>
-          <option value="on">8</option>
-        </select>
-        <select id="flap-7" data-role="flipswitch">
-          <option value="off">7</option>
-          <option value="on">7</option>
-        </select>
-        <select id="flap-6" data-role="flipswitch">
-          <option value="off">6</option>
-          <option value="on">6</option>
-        </select>
-        <select id="flap-5" data-role="flipswitch">
-          <option value="off">5</option>
-          <option value="on">5</option>
-        </select>
-        <select id="flap-4" data-role="flipswitch">
-          <option value="off">4</option>
-          <option value="on">4</option>
-        </select>
-        <select id="flap-3" data-role="flipswitch">
-          <option value="off">3</option>
-          <option value="on">3</option>
-        </select>
-        <select id="flap-2" data-role="flipswitch">
-          <option value="off">2</option>
-          <option value="on">2</option>
-        </select>
-        <select id="flap-1" data-role="flipswitch">
-          <option value="off">1</option>
-          <option value="on">1</option>
-        </select>
-      </td>
-      <td>
-        <center>
-        <img id='die1' src='img/1w6-3.png' width='50%' /><br/>
-        <img id='die2' src='img/1w6-3.png' width='50%' />
-        </center>
-      </td>
+        </select></td>
+        <td rowspan='9'>
+          <center>
+          <img id='die1' src='img/1w6-3.png' width='50%' /><br/>
+          <img id='die2' src='img/1w6-3.png' width='50%' />
+          </center>
+        </td>
       </tr>
+      <tr><td><select id="flap-8" data-role="flipswitch">
+        <option value="off">8</option>
+        <option value="on">8</option>
+      </select></td></tr>
+      <tr><td><select id="flap-7" data-role="flipswitch">
+        <option value="off">7</option>
+        <option value="on">7</option>
+      </select></td></tr>
+      <tr><td><select id="flap-6" data-role="flipswitch">
+        <option value="off">6</option>
+        <option value="on">6</option>
+      </select></td></tr>
+      <tr><td><select id="flap-5" data-role="flipswitch">
+        <option value="off">5</option>
+        <option value="on">5</option>
+      </select></td></tr>
+      <tr><td><select id="flap-4" data-role="flipswitch">
+        <option value="off">4</option>
+        <option value="on">4</option>
+      </select></td></tr>
+      <tr><td><select id="flap-3" data-role="flipswitch">
+        <option value="off">3</option>
+        <option value="on">3</option>
+      </select></td></tr>
+      <tr><td><select id="flap-2" data-role="flipswitch">
+        <option value="off">2</option>
+        <option value="on">2</option>
+      </select></td></tr>
+      <tr><td><select id="flap-1" data-role="flipswitch">
+        <option value="off">1</option>
+        <option value="on">1</option>
+      </select></td></tr>
       </table>
     </div>
   </div><!-- /content -->
