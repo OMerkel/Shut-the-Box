@@ -33,3 +33,14 @@ figure.diagram figcaption {
   margin: 0px;
 }
 
+table {
+  max-width: 400px;
+  border: 0px solid black;
+  border-spacing: 0px;
+}
+
+td {
+  padding: 0px;
+  margin: 0px;
+  border: 0px solid black;
+}
