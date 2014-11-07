@@ -11,20 +11,13 @@ var flap = new Array();
 var single = $('#single');
 
 function showResult() {
-  var availableWidth = 400 < window.innerWidth ? 400 : window.innerWidth;
-  die1.css({opacity: 1.0,
-    visibility: 'visible',
-    width: availableWidth>>2 });
-  if (!single.is(':checked')) {
-    die2.css({opacity: 1.0,
-      visibility: 'visible',
-      width: availableWidth>>2 });
-  }
+  die1.css('visibility', 'visible');
+  die2.css('visibility', single.is(':checked') ? 'hidden' : 'visible');
 }
 
 function roll() {
-  die1.css({opacity: 0.0, visibility: 'hidden'});
-  die2.css({opacity: 0.0, visibility: 'hidden'});
+  die1.css('visibility', 'hidden');
+  die2.css('visibility', 'hidden');
   var die1value=Math.floor(Math.random()*6)+1;
   var die2value=Math.floor(Math.random()*6)+1;
   die1[0].src = 'img/1w6-' + die1value + '.png';
@@ -42,12 +35,40 @@ function toggleDiceAmount() {
   roll();
 }
 
+function resize() {
+  var innerHeight = $(window).innerHeight();
+	$('#game-region').css('min-height', (innerHeight-64)+'px');
+
+  var innerWidth = window.innerWidth;
+  var size = 500 < innerWidth ? 125 : (innerWidth>>2);
+  die1.css('width', size);
+  die2.css('width', size);
+
+  var minSize = 32;
+  var size = 0.05 * innerWidth < minSize ? minSize : 0.05 * innerWidth;
+  $('#customMenu').css({
+    'width': size+'px', 'height': size+'px',
+    'background-size': size+'px ' + size+'px',
+  });
+  size = 0.05 * innerWidth < minSize ? minSize : 0.05 * innerWidth;
+  $('#customBackRules').css({
+    'width': size+'px', 'height': size+'px',
+    'background-size': size+'px ' + size+'px',
+  });
+  $('#customBackAbout').css({
+    'width': size+'px', 'height': size+'px',
+    'background-size': size+'px ' + size+'px',
+  });
+}
+
 function init() {
   for(var i=0; i<9; ++i) {
     flap[flap.length] = $('#flap-'+(i+1));
   }
   $('#new').click(newGame);
   single.click(toggleDiceAmount);
+  $(window).resize(resize);
+  $(window).resize();
   die1.click(roll);
   die2.click(roll);
   showResult();
