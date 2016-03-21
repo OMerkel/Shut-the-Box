@@ -9,7 +9,8 @@
 
 <b>Keywords, Categories</b> <em>Dice Game, Games/Entertainment, Mobile</em>
 
-This is the famous traditional pub game Shut the Box. It is implemented for HTML5/Javascript/CSS platforms.
+This is the famous traditional pub game Shut the Box.
+It is implemented for HTML5/Javascript/CSS platforms.
 
 Shut the Box is played in different variants and no organization is known
 targeting standardization of rule variants for the game. Thus if
@@ -22,7 +23,21 @@ Such that no specific rules are really forced to be applied. At any
 time you can take back an action like open a just closed flap and
 perform a different choice. If in need you can use a single die
 or two dice, roll again, switch to the menu and look up any rule
-variants in between game play.
+variants in between game play as described in the WebApp itself.
+
+This way different variants and rules with a recommended variant
+are available and explained accessible via the menu in upper left:
+
+* Variant _Single Die on flaps #7, #8, #9 closed_,
+* Variant _Avoid High Sums_, e.g. suitable for younger players,
+* Variant _More Restrictive Single Die_,
+* Variant _Two Dice Only_,
+* Variant _Exact Match_,
+* Variant _Score Single Die is Enough_,
+* Variant _Thai Style_,
+* Variant _Multiple Fixed Rounds_,
+* Variant _Defined Maximum Penalty_,
+* Variant _Flap Numbers Are Penalty Digits_
 
 ### Contributors / Authors
 
