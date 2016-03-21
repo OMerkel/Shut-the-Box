@@ -1,8 +1,9 @@
 <img alt="Shut-the-Box logo" width="64" src="html5/src/img/icons/1w6-5-128.png" /> Shut the Box
 ============
 
-* <em>Start an online</em> <b>Shut the Box</b> <em>session on</em> http://omerkel.github.io/Shut-the-Box/html5/src/
-* <em>runs in various browsers on</em>
+* <em>Start an online</em> <b>Shut the Box</b> <em>session on</em> http://omerkel.github.io/Shut-the-Box/html5/src
+* <em>Also published in</em> <a href="https://marketplace.firefox.com/app/shut-the-box"><img align="middle" width="150px" src="https://marketplace.cdn.mozilla.net/media/fireplace/img/pretty/marketplace_logo.png" /></a>
+* <em>Runs in various browsers on</em>
     * <em>desktop systems like BSDs, Linux, Win, MacOS and</em>
     * <em>mobile platforms like Android, FirefoxOS, iOS.</em>
 
