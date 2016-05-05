@@ -12,7 +12,6 @@
 <b>Keywords, Categories</b> <em>Dice Game, Games/Entertainment, Mobile</em>
 
 This is the famous traditional pub game Shut the Box.
-It is implemented for HTML5/Javascript/CSS platforms.
 
 Shut the Box is played in different variants and no organization is known
 targeting standardization of rule variants for the game. Thus if
