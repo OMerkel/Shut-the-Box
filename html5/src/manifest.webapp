@@ -1,19 +1,19 @@
 {
   "version": "0.2",
   "name": "Shut the Box",
-  "description": "Shut the Box",
+  "description": "Famous traditional pub game Shut the Box",
   "launch_path": "/index.html",
   "orientation": "portrait-primary",
   "icons": {
-    "16": "/img/icons/1w6-5-16.png",
-    "32": "/img/icons/1w6-5-32.png",
-    "48": "/img/icons/1w6-5-48.png",
-    "60": "/img/icons/1w6-5-60.png",
-    "64": "/img/icons/1w6-5-64.png",
-    "90": "/img/icons/1w6-5-90.png",
-    "120": "/img/icons/1w6-5-120.png",
-    "128": "/img/icons/1w6-5-128.png",
-    "256": "/img/icons/1w6-5-256.png"
+    "16": "/img/icons/shutthebox16.png",
+    "32": "/img/icons/shutthebox32.png",
+    "48": "/img/icons/shutthebox48.png",
+    "60": "/img/icons/shutthebox60.png",
+    "64": "/img/icons/shutthebox64.png",
+    "90": "/img/icons/shutthebox90.png",
+    "120": "/img/icons/shutthebox120.png",
+    "128": "/img/icons/shutthebox128.png",
+    "256": "/img/icons/shutthebox256.png"
   },
   "developer": {
     "name": "Oliver Merkel",
