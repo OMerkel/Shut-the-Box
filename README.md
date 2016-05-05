@@ -24,7 +24,7 @@ Such that no specific rules are really forced to be applied. At any
 time you can take back an action like open a just closed flap and
 perform a different choice. If in need you can use a single die
 or two dice, roll again, switch to the menu and look up any rule
-variants in between game play as described in the WebApp itself.
+variants in between game play as described in the Application itself.
 
 This way different variants and rules with a recommended variant
 are available and explained accessible via the menu in upper left:
