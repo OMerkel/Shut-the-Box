@@ -1,4 +1,4 @@
-<img alt="Shut-the-Box logo" width="64" src="html5/src/img/icons/1w6-5-128.png" /> Shut the Box
+<img alt="Shut-the-Box logo" width="64" src="html5/src/img/icons/shutthebox128.png" /> Shut the Box
 ============
 
 * <em>Start an online</em> <b>Shut the Box</b> <em>session on</em> http://omerkel.github.io/Shut-the-Box/html5/src
