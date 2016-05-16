@@ -29,10 +29,12 @@ function newGame() {
   for(var i=0; i<9; ++i) {
     flap[i].val('off').flipswitch('refresh');
   }
+  $( '#left-panel' ).panel( 'close' );
 }
 
 function toggleDiceAmount() {
   roll();
+  $( '#left-panel' ).panel( 'close' );
 }
 
 function resize() {
