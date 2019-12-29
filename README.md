@@ -1,7 +1,9 @@
 <img alt="Shut-the-Box logo" width="64" src="html5/src/img/icons/shutthebox128.png" /> Shut the Box
 ============
 
-* <em>Start an online</em> <b>Shut the Box</b> <em>session on</em> http://omerkel.github.io/Shut-the-Box/html5/src
+* <em>Start an online</em> <b>Shut the Box</b> <em>session on</em>
+    * http://omerkel.github.io/Shut-the-Box/html5/src
+    * http://omerkel.github.io/Shut-the-Box/html5/src/index_de.html (German language)
 * <em><b>Shut the Box</b> on <a href="http://fb.me/ShutTheBox">Facebook</a></em>
 * <em>Android APK available for install</em> <img align="top" width="32" src="res/android.gif" /> https://github.com/OMerkel/Shut-the-Box/releases/tag/release_0.2
     * requires minimum Android 4.4.2 (API-19)
