@@ -39,14 +39,15 @@ function toggleDiceAmount() {
 
 function resize() {
   var innerHeight = $(window).innerHeight();
-	$('#game-region').css('min-height', (innerHeight-64)+'px');
+  $('#game-region').css('min-height', (innerHeight-64)+'px');
 
   var innerWidth = window.innerWidth;
-  var size = 500 < innerWidth ? 125 : (innerWidth>>2);
+  var size = innerHeight < innerWidth ? innerHeight*0.35 : innerWidth*0.35;
+  var size = 170 < size ? 170 : size;
   die1.css('width', size);
   die2.css('width', size);
 
-  var minSize = 32;
+  var minSize = 56;
   var size = 0.05 * innerWidth < minSize ? minSize : 0.05 * innerWidth;
   $('#customMenu').css({
     'width': size+'px', 'height': size+'px',
