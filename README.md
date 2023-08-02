@@ -5,8 +5,7 @@
     * http://omerkel.github.io/Shut-the-Box/html5/src
     * http://omerkel.github.io/Shut-the-Box/html5/src/index_de.html (German language)
 * <em><b>Shut the Box</b> on <a href="http://fb.me/ShutTheBox">Facebook</a></em>
-* <em>Android APK available for install</em> <img align="top" width="32" src="res/android.gif" /> https://github.com/OMerkel/Shut-the-Box/releases/tag/release_0.2
-    * requires minimum Android 4.4.2 (API-19)
+* <em>Android APK available for install</em> <img align="top" width="32" src="res/android.gif" /> https://github.com/OMerkel/Shut-the-Box/releases
 * <em>Runs in various browsers on</em>
     * <em>desktop systems like BSDs, Linux, Win, MacOS and</em>
     * <em>mobile platforms like Android, FirefoxOS, iOS.</em>
@@ -29,7 +28,7 @@ or two dice, roll again, switch to the menu and look up any rule
 variants in between game play as described in the application itself.
 
 This way different variants and rules with a recommended variant
-are available and explained accessible via the menu in upper left:
+are available and explained accessible in the rules section:
 
 * Variant _Single Die on flaps #7, #8, #9 closed_,
 * Variant _Avoid High Sums_, e.g. suitable for younger players,

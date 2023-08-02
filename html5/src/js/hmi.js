@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2014 Oliver Merkel
+// Copyright (c) 2014, 2023 Oliver Merkel
 // All rights reserved.
 //
 // @author Oliver Merkel, <Merkel(dot)Oliver(at)web(dot)de>
@@ -27,14 +27,8 @@ function roll() {
 
 function newGame() {
   for(var i=0; i<9; ++i) {
-    flap[i].val('off').flipswitch('refresh');
+    flap[i][0].checked = false;
   }
-  $( '#left-panel' ).panel( 'close' );
-}
-
-function toggleDiceAmount() {
-  roll();
-  $( '#left-panel' ).panel( 'close' );
 }
 
 function resize() {
@@ -46,30 +40,14 @@ function resize() {
   var size = 170 < size ? 170 : size;
   die1.css('width', size);
   die2.css('width', size);
-
-  var minSize = 56;
-  var size = 0.05 * innerWidth < minSize ? minSize : 0.05 * innerWidth;
-  $('#customMenu').css({
-    'width': size+'px', 'height': size+'px',
-    'background-size': size+'px ' + size+'px',
-  });
-  size = 0.05 * innerWidth < minSize ? minSize : 0.05 * innerWidth;
-  $('#customBackRules').css({
-    'width': size+'px', 'height': size+'px',
-    'background-size': size+'px ' + size+'px',
-  });
-  $('#customBackAbout').css({
-    'width': size+'px', 'height': size+'px',
-    'background-size': size+'px ' + size+'px',
-  });
 }
 
 function init() {
   for(var i=0; i<9; ++i) {
-    flap[flap.length] = $('#flap-'+(i+1));
+    flap[flap.length] = $('#myswitch'+(i+1));
   }
   $('#new').click(newGame);
-  single.click(toggleDiceAmount);
+  single.click(roll);
   $(window).resize(resize);
   $(window).resize();
   die1.click(roll);
@@ -77,4 +55,4 @@ function init() {
   showResult();
 }
 
-$(window).load( init() );
+$( init );
