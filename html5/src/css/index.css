@@ -1,36 +1,3 @@
-.ui-btn-icon-notext:after {
-    background-color: rgba(0, 0, 0, 0);
-}
-
-.customMenu {
-    background: url(../img/icons/icon-bars.svg) 50% 50% no-repeat;
-    left: 50%;
-    top: 50%;
-}
-
-.customBack {
-    background: url(../img/icons/icon-delete.svg) 50% 50% no-repeat;
-    left: 50%;
-    top: 50%;
-}
-
-.ui-btn-icon-notext.ui-corner-all {
-    border-radius: 20em;
-}
-
-.ui-btn {
-    border-width: 0px;
-    border-style: none;
-}
-
-.mycontent {
-  margin-top: 0px;
-}
-
-.mybackground {
-  background: url(../img/background.jpg) repeat;
-  padding-top: 4px;
-}
 
 figure.diagram {
   width: 58%;
@@ -56,4 +23,436 @@ figure.diagram figcaption {
   padding: 5px;
   border-radius: 0 0 8px 8px;
   margin: 0px;
+}
+
+.switch9 {
+    position: relative; width: 90px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.switch9-checkbox {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+.switch9-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid #999999; border-radius: 8px;
+}
+.switch9-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.switch9-inner:before, .switch9-inner:after {
+    display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+    font-size: 21px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    box-sizing: border-box;
+}
+.switch9-inner:before {
+    content: "9";
+    padding-left: 29px;
+    background-color: #38a; color: #eee;
+}
+.switch9-inner:after {
+    content: "9";
+    padding-right: 29px;
+    background-color: #111; color: #ddd;
+    text-align: right;
+}
+.switch9-switch {
+    display: block; width: 18px; margin: 6px;
+    background: #555;
+    position: absolute; top: 0; bottom: 0;
+    right: 56px;
+    border: 2px solid #999999; border-radius: 8px;
+    transition: all 0.3s ease-in 0s; 
+}
+.switch9-checkbox:checked + .switch9-label .switch9-inner {
+    margin-left: 0;
+}
+.switch9-checkbox:checked + .switch9-label .switch9-switch {
+    right: 0px; 
+}
+
+.switch8 {
+    position: relative; width: 90px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.switch8-checkbox {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+.switch8-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid #999999; border-radius: 8px;
+}
+.switch8-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.switch8-inner:before, .switch8-inner:after {
+    display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+    font-size: 21px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    box-sizing: border-box;
+}
+.switch8-inner:before {
+    content: "8";
+    padding-left: 29px;
+    background-color: #38a; color: #eee;
+}
+.switch8-inner:after {
+    content: "8";
+    padding-right: 29px;
+    background-color: #111; color: #ddd;
+    text-align: right;
+}
+.switch8-switch {
+    display: block; width: 18px; margin: 6px;
+    background: #555;
+    position: absolute; top: 0; bottom: 0;
+    right: 56px;
+    border: 2px solid #999999; border-radius: 8px;
+    transition: all 0.3s ease-in 0s; 
+}
+.switch8-checkbox:checked + .switch8-label .switch8-inner {
+    margin-left: 0;
+}
+.switch8-checkbox:checked + .switch8-label .switch8-switch {
+    right: 0px; 
+}
+
+.switch7 {
+    position: relative; width: 90px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.switch7-checkbox {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+.switch7-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid #999999; border-radius: 8px;
+}
+.switch7-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.switch7-inner:before, .switch7-inner:after {
+    display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+    font-size: 21px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    box-sizing: border-box;
+}
+.switch7-inner:before {
+    content: "7";
+    padding-left: 29px;
+    background-color: #38a; color: #eee;
+}
+.switch7-inner:after {
+    content: "7";
+    padding-right: 29px;
+    background-color: #111; color: #ddd;
+    text-align: right;
+}
+.switch7-switch {
+    display: block; width: 18px; margin: 6px;
+    background: #555;
+    position: absolute; top: 0; bottom: 0;
+    right: 56px;
+    border: 2px solid #999999; border-radius: 8px;
+    transition: all 0.3s ease-in 0s; 
+}
+.switch7-checkbox:checked + .switch7-label .switch7-inner {
+    margin-left: 0;
+}
+.switch7-checkbox:checked + .switch7-label .switch7-switch {
+    right: 0px; 
+}
+
+.switch6 {
+    position: relative; width: 90px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.switch6-checkbox {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+.switch6-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid #999999; border-radius: 8px;
+}
+.switch6-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.switch6-inner:before, .switch6-inner:after {
+    display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+    font-size: 21px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    box-sizing: border-box;
+}
+.switch6-inner:before {
+    content: "6";
+    padding-left: 29px;
+    background-color: #38a; color: #eee;
+}
+.switch6-inner:after {
+    content: "6";
+    padding-right: 29px;
+    background-color: #111; color: #ddd;
+    text-align: right;
+}
+.switch6-switch {
+    display: block; width: 18px; margin: 6px;
+    background: #555;
+    position: absolute; top: 0; bottom: 0;
+    right: 56px;
+    border: 2px solid #999999; border-radius: 8px;
+    transition: all 0.3s ease-in 0s; 
+}
+.switch6-checkbox:checked + .switch6-label .switch6-inner {
+    margin-left: 0;
+}
+.switch6-checkbox:checked + .switch6-label .switch6-switch {
+    right: 0px; 
+}
+
+.switch5 {
+    position: relative; width: 90px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.switch5-checkbox {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+.switch5-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid #999999; border-radius: 8px;
+}
+.switch5-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.switch5-inner:before, .switch5-inner:after {
+    display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+    font-size: 21px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    box-sizing: border-box;
+}
+.switch5-inner:before {
+    content: "5";
+    padding-left: 29px;
+    background-color: #38a; color: #eee;
+}
+.switch5-inner:after {
+    content: "5";
+    padding-right: 29px;
+    background-color: #111; color: #ddd;
+    text-align: right;
+}
+.switch5-switch {
+    display: block; width: 18px; margin: 6px;
+    background: #555;
+    position: absolute; top: 0; bottom: 0;
+    right: 56px;
+    border: 2px solid #999999; border-radius: 8px;
+    transition: all 0.3s ease-in 0s; 
+}
+.switch5-checkbox:checked + .switch5-label .switch5-inner {
+    margin-left: 0;
+}
+.switch5-checkbox:checked + .switch5-label .switch5-switch {
+    right: 0px; 
+}
+
+.switch4 {
+    position: relative; width: 90px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.switch4-checkbox {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+.switch4-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid #999999; border-radius: 8px;
+}
+.switch4-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.switch4-inner:before, .switch4-inner:after {
+    display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+    font-size: 21px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    box-sizing: border-box;
+}
+.switch4-inner:before {
+    content: "4";
+    padding-left: 29px;
+    background-color: #38a; color: #eee;
+}
+.switch4-inner:after {
+    content: "4";
+    padding-right: 29px;
+    background-color: #111; color: #ddd;
+    text-align: right;
+}
+.switch4-switch {
+    display: block; width: 18px; margin: 6px;
+    background: #555;
+    position: absolute; top: 0; bottom: 0;
+    right: 56px;
+    border: 2px solid #999999; border-radius: 8px;
+    transition: all 0.3s ease-in 0s; 
+}
+.switch4-checkbox:checked + .switch4-label .switch4-inner {
+    margin-left: 0;
+}
+.switch4-checkbox:checked + .switch4-label .switch4-switch {
+    right: 0px; 
+}
+
+.switch3 {
+    position: relative; width: 90px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.switch3-checkbox {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+.switch3-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid #999999; border-radius: 8px;
+}
+.switch3-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.switch3-inner:before, .switch3-inner:after {
+    display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+    font-size: 21px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    box-sizing: border-box;
+}
+.switch3-inner:before {
+    content: "3";
+    padding-left: 29px;
+    background-color: #38a; color: #eee;
+}
+.switch3-inner:after {
+    content: "3";
+    padding-right: 29px;
+    background-color: #111; color: #ddd;
+    text-align: right;
+}
+.switch3-switch {
+    display: block; width: 18px; margin: 6px;
+    background: #555;
+    position: absolute; top: 0; bottom: 0;
+    right: 56px;
+    border: 2px solid #999999; border-radius: 8px;
+    transition: all 0.3s ease-in 0s; 
+}
+.switch3-checkbox:checked + .switch3-label .switch3-inner {
+    margin-left: 0;
+}
+.switch3-checkbox:checked + .switch3-label .switch3-switch {
+    right: 0px; 
+}
+
+.switch2 {
+    position: relative; width: 90px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.switch2-checkbox {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+.switch2-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid #999999; border-radius: 8px;
+}
+.switch2-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.switch2-inner:before, .switch2-inner:after {
+    display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+    font-size: 21px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    box-sizing: border-box;
+}
+.switch2-inner:before {
+    content: "2";
+    padding-left: 29px;
+    background-color: #38a; color: #eee;
+}
+.switch2-inner:after {
+    content: "2";
+    padding-right: 29px;
+    background-color: #111; color: #ddd;
+    text-align: right;
+}
+.switch2-switch {
+    display: block; width: 18px; margin: 6px;
+    background: #555;
+    position: absolute; top: 0; bottom: 0;
+    right: 56px;
+    border: 2px solid #999999; border-radius: 8px;
+    transition: all 0.3s ease-in 0s; 
+}
+.switch2-checkbox:checked + .switch2-label .switch2-inner {
+    margin-left: 0;
+}
+.switch2-checkbox:checked + .switch2-label .switch2-switch {
+    right: 0px; 
+}
+
+.switch1 {
+    position: relative; width: 90px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.switch1-checkbox {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+.switch1-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid #999999; border-radius: 8px;
+}
+.switch1-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.switch1-inner:before, .switch1-inner:after {
+    display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+    font-size: 21px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    box-sizing: border-box;
+}
+.switch1-inner:before {
+    content: "1";
+    padding-left: 29px;
+    background-color: #38a; color: #eee;
+}
+.switch1-inner:after {
+    content: "1";
+    padding-right: 29px;
+    background-color: #111; color: #ddd;
+    text-align: right;
+}
+.switch1-switch {
+    display: block; width: 18px; margin: 6px;
+    background: #555;
+    position: absolute; top: 0; bottom: 0;
+    right: 56px;
+    border: 2px solid #999999; border-radius: 8px;
+    transition: all 0.3s ease-in 0s; 
+}
+.switch1-checkbox:checked + .switch1-label .switch1-inner {
+    margin-left: 0;
+}
+.switch1-checkbox:checked + .switch1-label .switch1-switch {
+    right: 0px; 
 }
