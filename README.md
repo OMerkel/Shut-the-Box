@@ -1,22 +1,26 @@
-<img alt="Shut-the-Box logo" width="64" src="html5/src/img/icons/shutthebox128.png" /> Shut the Box
-============
+# Shut the Box
 
-* <em>Start an online</em> <b>Shut the Box</b> <em>session on</em>
-    * http://omerkel.github.io/Shut-the-Box/html5/src
-    * http://omerkel.github.io/Shut-the-Box/html5/src/index_de.html (German language)
-* <em><b>Shut the Box</b> on <a href="http://fb.me/ShutTheBox">Facebook</a></em>
-* <em>Android APK available for install</em> <img align="top" width="32" src="res/android.gif" /> https://github.com/OMerkel/Shut-the-Box/releases
-* <em>Runs in various browsers on</em>
-    * <em>desktop systems like BSDs, Linux, Win, MacOS and</em>
-    * <em>mobile platforms like Android, FirefoxOS, iOS.</em>
+![Shut-the-Box logo](html5/src/img/icons/shutthebox128.png)
 
-<b>Keywords, Categories</b> <em>Dice Game, Games/Entertainment, Mobile</em>
+- *Start an online* **Shut the Box** *session on*
+  - [English](http://omerkel.github.io/Shut-the-Box/html5/src)
+  - Language is selectable at runtime in the Options tab: English, Deutsch, Italiano, Français, Español
+- Progressive Web Application (PWA) support
+  - While online play install via *Add to homescreen* in your browser
+- **Shut the Box** on [Facebook](http://fb.me/ShutTheBox)
+- *Android APK available for install* ![Android](res/android.gif)
+  - [Releases](https://github.com/OMerkel/Shut-the-Box/releases)
+- *Runs in various browsers on*
+  - *desktop systems like BSDs, Linux, Win, MacOS and*
+  - *mobile platforms like Android, FirefoxOS, iOS.*
+
+**Keywords, Categories:** *Dice Game, Games/Entertainment, Mobile*
 
 This is the famous traditional pub game Shut the Box.
 
 Shut the Box is played in different variants and no organization is known
 targeting standardization of rule variants for the game. Thus if
-playing <em>Shut the Box</em> with others you should first try
+playing *Shut the Box* with others you should first try
 to find agreement and commitment on rules. If in doubt I recommend
 to prefer and apply the locally played rules.
 
@@ -30,26 +34,43 @@ variants in between game play as described in the application itself.
 This way different variants and rules with a recommended variant
 are available and explained accessible in the rules section:
 
-* Variant _Single Die on flaps #7, #8, #9 closed_,
-* Variant _Avoid High Sums_, e.g. suitable for younger players,
-* Variant _More Restrictive Single Die_,
-* Variant _Two Dice Only_,
-* Variant _Exact Match_,
-* Variant _Score Single Die is Enough_,
-* Variant _Thai Style_,
-* Variant _Multiple Fixed Rounds_,
-* Variant _Defined Maximum Penalty_,
-* Variant _Flap Numbers Are Penalty Digits_
+- Variant *Single Die on flaps #7, #8, #9 closed*
+- Variant *Avoid High Sums*, e.g. suitable for younger players
+- Variant *More Restrictive Single Die*
+- Variant *Two Dice Only*
+- Variant *Exact Match*
+- Variant *Score Single Die is Enough*
+- Variant *Thai Style*
+- Variant *Multiple Fixed Rounds*
+- Variant *Defined Maximum Penalty*
+- Variant *Flap Numbers Are Penalty Digits*
 
-### Contributors / Authors
+## Software Architecture
 
-<table>
-  <tr>
-    <td><p>Oliver Merkel,<br /><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />This image is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.    
-    </p>
-    </td>
-    <td width="50%"><img width="100%" ondragstart="return false;" alt="Oliver Merkel, Creative Commons License, This image is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License." src="html5/src/img/oliver-sliabh_liag.jpg" /></td>
-  </tr>
-</table>
+The application follows a modern browser-first architecture with ES modules, no jQuery dependencies, and a clear separation between UI orchestration and pure domain/helper logic.
 
-_All logos, brands, and trademarks mentioned belong to their respective owners._
+- Architecture specification: [doc/software_architecture.md](doc/software_architecture.md)
+- Key properties:
+  - Functional core / imperative shell split
+  - Offline-capable PWA via manifest and module service worker
+  - Runtime internationalization with a single entry page and locale dictionary
+  - Supported application languages: English, Deutsch, Italiano, Français, Español
+  - Deterministic helper module with high unit-test coverage
+
+UML coverage in the architecture document includes use case, class, object, package, component, composite structure, deployment, profile, activity, state machine, sequence, communication, interaction overview, and timing diagrams as Mermaid.
+
+## Requirements
+
+The current as-built requirements baseline is documented in [doc/requirements.md](doc/requirements.md).
+
+- Structured Functional Requirements (FR) and Non-Functional Requirements (NFR)
+- Traceability from requirements to implementation, tests, and architecture documentation
+- Explicit quality criteria for offline behavior, internationalization, legal consistency, and testability
+
+## Contributors / Authors
+
+- Oliver Merkel
+- [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License](http://creativecommons.org/licenses/by-nc-nd/4.0/)
+- ![Oliver Merkel, Slieve League](html5/src/img/oliver-sliabh_liag.jpg)
+
+*All logos, brands, and trademarks mentioned belong to their respective owners.*

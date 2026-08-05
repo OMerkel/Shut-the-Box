@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang='en'>
 <head profile='http://dublincore.org/documents/dcq-html/'>
   <link rel='icon' href='img/icons/favicon.ico' type='image/x-icon' />
   <link rel='schema.DC' href='http://purl.org/dc/elements/1.1/' />
   <link rel='schema.DCTERMS' href='http://purl.org/dc/terms/' />
   <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
   <meta charset='UTF-8' />
+  <meta name='theme-color' content='#d9c9a7' />
   <meta name='AUTHOR' content='Oliver Merkel' />
   <meta name='COPYRIGHT' content='Oliver Merkel' />
   <meta name='DC.creator' content='Oliver Merkel' />
@@ -13,7 +14,7 @@
   <meta name='DC.rights' content="
 See file named LICENSE being part of the repository.
 
-Copyright (c) 2014, 2023
+Copyright (c) 2014, 2026
 @author Oliver Merkel, Merkel(dot)Oliver(at)web(dot)de.
 All rights reserved.
 
@@ -23,7 +24,7 @@ All source code also including code parts written in HMTL, Javascript, CSS, Pyth
 
 The MIT License (MIT)
 
-Copyright (c) 2014, 2023 Oliver Merkel, Merkel(dot)Oliver(at)web(dot)de
+Copyright (c) 2014, 2026 Oliver Merkel, Merkel(dot)Oliver(at)web(dot)de
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the &quot;Software&quot;), to deal in
@@ -47,29 +48,17 @@ If not otherwise stated all graphics (independent of its format) are licensed un
     Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
 " />
   <title>Shut the Box</title>
+  <link rel='manifest' href='manifest.webmanifest' />
   <meta name='apple-mobile-web-app-capable' content='yes' />
   <meta name='apple-mobile-web-app-status-bar-style' content='black' />
+  <meta name='apple-mobile-web-app-title' content='Shut the Box' />
   <link rel='apple-touch-icon' href='img/icons/shutthebox128.png' />
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'
     name='viewport' />
-  <link rel='stylesheet' type='text/css' href='thirdparty/jquery-ui-1.13.2/jquery-ui.css' />
   <link rel='stylesheet' type='text/css' href='css/index.css' />
-  <script src='thirdparty/jquery-3.7.0.js' type='text/javascript'></script> 
-  <script src='thirdparty/jquery-ui-1.13.2/jquery-ui.js' type='text/javascript'></script>
-  <script src='js/hmi.js' type='text/javascript' defer></script>
-  <script>
-  $( function() {
-    $( "#tabs" ).tabs();
-    $( "#accordion-rules" ).accordion({
-      heightStyle: "content"
-    });
-    $( "#accordion" ).accordion({
-      heightStyle: "content"
-    });
-  } );
-  </script>
+  <script src='js/hmi.js' type='module'></script>
 </head>
-<body class='ui-widget ui-widget-content'>
+<body>
 <div id='game-page'>
   <noscript>
     <p>This HTML5 application depends on enabled Javascript capabilities in your browser.</p>
@@ -77,13 +66,14 @@ If not otherwise stated all graphics (independent of its format) are licensed un
   </noscript>
 <div id='tabs'>
   <ul>
-    <li><a href='#tabs-board'>Board</a></li>
-    <li><a href='#tabs-rules'>Rules&#8230;</a></li>
-    <li><a href='#tabs-about'>About&#8230;</a></li>
+    <li><a id='tab-title-board' href='#tabs-board'>Board</a></li>
+    <li><a id='tab-title-rules' href='#tabs-rules'>Rules&#8230;</a></li>
+    <li><a id='tab-title-options' href='#tabs-options'>Options&#8230;</a></li>
+    <li><a id='tab-title-about' href='#tabs-about'>About&#8230;</a></li>
   </ul>
-  <div id='tabs-board' style='background: #ca8;'>
-    <div style='display: grid; gap: 16px;'>
-      <div style='grid-column: 2; grid-row: 1;'>
+  <div id='tabs-board' class='board-panel'>
+    <div class='board-layout'>
+      <div class='board-flap-row board-flap-row-1'>
         <div class="switch9" >
           <input type="checkbox" name="switch9" class="switch9-checkbox" id="myswitch9" tabindex="0">
           <label class="switch9-label" for="myswitch9">
@@ -92,7 +82,7 @@ If not otherwise stated all graphics (independent of its format) are licensed un
           </label>
         </div>
       </div>
-      <div style='grid-column: 2; grid-row: 2;'>
+      <div class='board-flap-row board-flap-row-2'>
         <div class="switch8">
           <input type="checkbox" name="switch8" class="switch8-checkbox" id="myswitch8" tabindex="0">
           <label class="switch8-label" for="myswitch8">
@@ -101,7 +91,7 @@ If not otherwise stated all graphics (independent of its format) are licensed un
           </label>
         </div>
       </div>
-      <div style='grid-column: 2; grid-row: 3;'>
+      <div class='board-flap-row board-flap-row-3'>
         <div class="switch7">
           <input type="checkbox" name="switch7" class="switch7-checkbox" id="myswitch7" tabindex="0">
           <label class="switch7-label" for="myswitch7">
@@ -110,7 +100,7 @@ If not otherwise stated all graphics (independent of its format) are licensed un
           </label>
         </div>
       </div>
-      <div style='grid-column: 2; grid-row: 4;'>
+      <div class='board-flap-row board-flap-row-4'>
         <div class="switch6">
           <input type="checkbox" name="switch6" class="switch6-checkbox" id="myswitch6" tabindex="0">
           <label class="switch6-label" for="myswitch6">
@@ -119,7 +109,7 @@ If not otherwise stated all graphics (independent of its format) are licensed un
           </label>
         </div>
       </div>
-      <div style='grid-column: 2; grid-row: 5;'>
+      <div class='board-flap-row board-flap-row-5'>
         <div class="switch5">
           <input type="checkbox" name="switch5" class="switch5-checkbox" id="myswitch5" tabindex="0">
           <label class="switch5-label" for="myswitch5">
@@ -128,7 +118,7 @@ If not otherwise stated all graphics (independent of its format) are licensed un
           </label>
         </div>
       </div>
-      <div style='grid-column: 2; grid-row: 6;'>
+      <div class='board-flap-row board-flap-row-6'>
         <div class="switch4">
           <input type="checkbox" name="switch4" class="switch4-checkbox" id="myswitch4" tabindex="0">
           <label class="switch4-label" for="myswitch4">
@@ -137,7 +127,7 @@ If not otherwise stated all graphics (independent of its format) are licensed un
           </label>
         </div>
       </div>
-      <div style='grid-column: 2; grid-row: 7;'>
+      <div class='board-flap-row board-flap-row-7'>
         <div class="switch3">
           <input type="checkbox" name="switch3" class="switch3-checkbox" id="myswitch3" tabindex="0">
           <label class="switch3-label" for="myswitch3">
@@ -146,7 +136,7 @@ If not otherwise stated all graphics (independent of its format) are licensed un
           </label>
         </div>
       </div>
-      <div style='grid-column: 2; grid-row: 8;'>
+      <div class='board-flap-row board-flap-row-8'>
         <div class="switch2">
           <input type="checkbox" name="switch2" class="switch2-checkbox" id="myswitch2" tabindex="0">
           <label class="switch2-label" for="myswitch2">
@@ -155,7 +145,7 @@ If not otherwise stated all graphics (independent of its format) are licensed un
           </label>
         </div>
       </div>
-      <div style='grid-column: 2; grid-row: 9;'>
+      <div class='board-flap-row board-flap-row-9'>
         <div class="switch1">
           <input type="checkbox" name="switch1" class="switch1-checkbox" id="myswitch1" tabindex="0">
           <label class="switch1-label" for="myswitch1">
@@ -164,23 +154,23 @@ If not otherwise stated all graphics (independent of its format) are licensed un
           </label>
         </div>
       </div>
-      <div style='grid-column: 3; grid-row: 1 / 10;'>
-        <img id='die1' src='img/1w6-3.png' style='visibility: visible;' /><br/>
-        <img id='die2' src='img/1w6-3.png' style='visibility: visible;' />
+      <div class='board-dice-column'>
+        <img id='die1' src='img/1w6-3.png' alt='Die 1' /><br/>
+        <img id='die2' src='img/1w6-3.png' alt='Die 2' />
       </div>
-      <div style='grid-column: 1 / 4; grid-row: 10;'>
-        <span id='new' class='ui-button ui-widget ui-corner-all'>
+      <div class='board-controls'>
+        <span id='new' class='ui-button'>
           New
         </span>
-        <span class='ui-button ui-widget ui-corner-all'>
+        <span class='ui-button'>
           <input type='checkbox' name='single' id='single' />
-          <label for='single'><img src='img/toggle-amount-64.png' height='18' /></label>
+          <label for='single'><img id='single-toggle-icon' src='img/toggle-amount-64.png' alt='Toggle single die mode' height='18' /></label>
         </span>
       </div>
     </div>
   </div><!-- /tabs-board -->
   <div id='tabs-rules'>
-    <div>
+    <div id='tabs-rules-content'>
       <p><b>Shut the Box</b> is a famous traditional pub game.
         It is played in different variants and no organization is known
         targeting standardization of rule variants for the game. Thus if
@@ -316,25 +306,72 @@ If not otherwise stated all graphics (independent of its format) are licensed un
     </div>
   </div><!-- /tabs-rules -->
 
-  <div id='tabs-about'>
+  <div id='tabs-options'>
     <div>
+      <h3 id='language-heading'>Language</h3>
+      <p id='language-description'>Choose your preferred language for the application interface.</p>
+      <fieldset class='option-group'>
+        <legend>Language</legend>
+        <label>
+          <input type='radio' name='app-language' value='en' checked='checked' />
+          <span id='language-label-en'>English</span>
+        </label>
+        <label>
+          <input type='radio' name='app-language' value='de' />
+          <span id='language-label-de'>Deutsch</span>
+        </label>
+        <label>
+          <input type='radio' name='app-language' value='it' />
+          <span id='language-label-it'>Italiano</span>
+        </label>
+        <label>
+          <input type='radio' name='app-language' value='fr' />
+          <span id='language-label-fr'>Français</span>
+        </label>
+        <label>
+          <input type='radio' name='app-language' value='es' />
+          <span id='language-label-es'>Español</span>
+        </label>
+      </fieldset>
+      <h3 id='sound-heading'>Sound</h3>
+      <p id='sound-description'>Choose dice roll sound intensity.</p>
+      <fieldset class='option-group'>
+        <legend id='sound-legend'>Dice Sound</legend>
+        <label>
+          <input type='radio' name='sound-intensity' value='off' />
+          <span id='sound-label-off'>Off</span>
+        </label>
+        <label>
+          <input type='radio' name='sound-intensity' value='soft' />
+          <span id='sound-label-soft'>Soft</span>
+        </label>
+        <label>
+          <input type='radio' name='sound-intensity' value='normal' checked='checked' />
+          <span id='sound-label-normal'>Normal</span>
+        </label>
+      </fieldset>
+    </div>
+  </div><!-- /tabs-options -->
+
+  <div id='tabs-about'>
+    <div id='tabs-about-content'>
       <div id='accordion'>
         <h3>Legal</h3>
         <div>
           <figure class='diagram' style='float: right;'>
-            <img src='img/oliver-sliabh_liag.jpg' />
+            <img src='img/oliver-sliabh_liag.jpg' alt='Oliver Merkel at Slieve League' />
             <figcaption>Oliver Merkel, Slieve League (Gaeilge: Sliabh Liag) at the One Man's Path, Contae Dh&uacute;n na nGall, &Eacute;ire, <a rel='license'
               href='http://creativecommons.org/licenses/by-nc-nd/4.0/'
               target='_blank'>cc-by-nc-nd 4.0</a>.</figcaption>
           </figure>
           <br />
-          <p>Copyright (c) 2014, 2023<br />
+          <p>Copyright (c) 2014, 2026<br />
             <b>@author</b> <em>Oliver Merkel</em>, Merkel(dot) Oliver(at) web(dot) de.<br />
             All rights reserved.<br />
             Logos, brands, and trademarks belong to their respective owners.</p>
           <p>All source code also including code parts written in HMTL, Javascript, CSS is under MIT License.</p>
           <h4>The MIT License (MIT)</h4>
-          <p>Copyright (c) 2014, 2023 Oliver Merkel, Merkel(dot) Oliver(at) web(dot)de</p>
+          <p>Copyright (c) 2014, 2026 Oliver Merkel, Merkel(dot) Oliver(at) web(dot)de</p>
 
           <p>Permission is hereby granted, free of charge, to any person obtaining a copy of
           this software and associated documentation files (the &quot;Software&quot;), to deal in
@@ -371,24 +408,11 @@ If not otherwise stated all graphics (independent of its format) are licensed un
             game designs and possibly authorship on an exact ruleset for
             commerical versions.</p>
         </div>
-        <h3>Third Party Code Licenses</h3>
+        <h3>Runtime Dependencies</h3>
         <div>
-          <p>This <b>Shut the Box</b> implementation uses unmodified
-            independent code libraries provided by <em>third parties</em>.
-            Since their licenses might vary the corresponding information is
-            <em>externally linked</em> below. Thus <em>these external links</em>
-            will enable you to reproduce any copyright notice,
-            any related list of conditions, disclaimers, and especially
-            the copyright holders and authors of the corresponding third
-            party functionality.</p>
-          <a href='https://github.com/jquery/jquery' class='ui-button ui-widget ui-corner-all' target='_blank' type='text/html'
-            title='jQuery - Repository'>
-            <img src='thirdparty/jquery-favicon.ico' width='16' height='16' />
-            jQuery: MIT</a>
-          <a href='https://github.com/jquery/jquery-ui' class='ui-button ui-widget ui-corner-all' target='_blank' type='text/html'
-            title='jQuery UI - Repository'>
-            <img src='thirdparty/jquery-ui-1.13.2/jquery-ui-favicon.ico' width='16' height='16' />
-            jQuery UI: MIT</a>
+          <p>This <b>Shut the Box</b> implementation now uses browser-native
+            HTML, CSS, and JavaScript for all runtime behavior. No third-party
+            JavaScript UI libraries are required to play the game.</p>
         </div>
       </div><!-- /accordion -->
     </div><!-- /content -->
