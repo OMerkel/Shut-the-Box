@@ -2,8 +2,8 @@
 
 ![Shut-the-Box logo](html5/src/img/icons/shutthebox128.png)
 
-- *Start an online* **Shut the Box** *session on*
-  - [English](http://omerkel.github.io/Shut-the-Box/html5/src)
+- *Start an online* **Shut the Box** *session*
+  - in [English](http://omerkel.github.io/Shut-the-Box/html5/src) language
   - Language is selectable at runtime in the Options tab: English, Deutsch, Italiano, Français, Español
 - Progressive Web Application (PWA) support
   - While online play install via *Add to homescreen* in your browser
