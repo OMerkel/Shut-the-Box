@@ -94,6 +94,7 @@ const LOCALE_BUNDLES = Object.freeze({
 		soundOff: "Off",
 		soundSoft: "Soft",
 		soundNormal: "Normal",
+    soundLoud: "Loud",
 		rulesContentHtml: `
       <p><b>Shut the Box</b> is a famous traditional pub game.
         It is played in different variants and no organization is known
@@ -252,6 +253,7 @@ const LOCALE_BUNDLES = Object.freeze({
 		soundOff: "Aus",
 		soundSoft: "Leise",
 		soundNormal: "Normal",
+    soundLoud: "Laut",
 		rulesContentHtml: `
       <p><b>Shut the Box</b> ist ein beliebtes traditionelles Spiel in irischen/englischen Pubs.
         Es wird in unterschiedlichen Varianten gespielt. Es gibt keine Organisation, die
@@ -422,6 +424,7 @@ const LOCALE_BUNDLES = Object.freeze({
 		soundOff: "Disattivato",
 		soundSoft: "Basso",
 		soundNormal: "Normale",
+    soundLoud: "Forte",
 		rulesContentHtml: `
       <p><b>Shut the Box</b> è un celebre gioco tradizionale da pub.
         Viene giocato in diverse varianti e non è nota alcuna organizzazione
@@ -522,6 +525,7 @@ const LOCALE_BUNDLES = Object.freeze({
 		soundOff: "Désactivé",
 		soundSoft: "Faible",
 		soundNormal: "Normal",
+    soundLoud: "Fort",
 		rulesContentHtml: `
       <p><b>Shut the Box</b> est un célèbre jeu traditionnel de pub.
         Il existe plusieurs variantes et aucune organisation n'est connue
@@ -622,6 +626,7 @@ const LOCALE_BUNDLES = Object.freeze({
 		soundOff: "Desactivado",
 		soundSoft: "Bajo",
 		soundNormal: "Normal",
+    soundLoud: "Fuerte",
 		rulesContentHtml: `
       <p><b>Shut the Box</b> es un famoso juego tradicional de pub.
         Se juega en distintas variantes y no se conoce ninguna organización

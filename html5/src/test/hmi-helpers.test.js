@@ -17,6 +17,7 @@ describe("hmi-helpers constants", () => {
 		expect(SOUND_LEVEL.OFF).toBe("off");
 		expect(SOUND_LEVEL.SOFT).toBe("soft");
 		expect(SOUND_LEVEL.NORMAL).toBe("normal");
+		expect(SOUND_LEVEL.LOUD).toBe("loud");
 		expect(SOUND_LEVEL_STORAGE_KEY).toBe("stb-sound-level");
 	});
 });
@@ -27,11 +28,12 @@ describe("sound level validation and normalization", () => {
 		expect(isSoundLevel("off")).toBe(true);
 		expect(isSoundLevel("soft")).toBe(true);
 		expect(isSoundLevel("normal")).toBe(true);
+		expect(isSoundLevel("loud")).toBe(true);
 	});
 
 	// Requirements: FR-09, NFR-02
 	it("rejects invalid sound levels", () => {
-		expect(isSoundLevel("loud")).toBe(false);
+		expect(isSoundLevel("very-loud")).toBe(false);
 		expect(isSoundLevel("")).toBe(false);
 		expect(isSoundLevel(undefined)).toBe(false);
 		expect(isSoundLevel(null)).toBe(false);
@@ -55,6 +57,7 @@ describe("gain and timing helpers", () => {
 		expect(getSoundGainMultiplier(SOUND_LEVEL.OFF)).toBe(0);
 		expect(getSoundGainMultiplier(SOUND_LEVEL.SOFT)).toBe(0.6);
 		expect(getSoundGainMultiplier(SOUND_LEVEL.NORMAL)).toBe(1);
+		expect(getSoundGainMultiplier(SOUND_LEVEL.LOUD)).toBe(1.6);
 		expect(getSoundGainMultiplier("invalid")).toBe(1);
 	});
 

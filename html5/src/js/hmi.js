@@ -88,6 +88,7 @@ import {
 		setText("sound-label-off", localeBundle.soundOff);
 		setText("sound-label-soft", localeBundle.soundSoft);
 		setText("sound-label-normal", localeBundle.soundNormal);
+		setText("sound-label-loud", localeBundle.soundLoud);
 
 		const rulesContent = byId("tabs-rules-content");
 		if (rulesContent) {
@@ -154,6 +155,22 @@ import {
 		}
 
 		const now = audioContext.currentTime;
+
+		// Route all layers through a lightly boosted bus with compression
+		// so mobile output is louder but less prone to clipping peaks.
+		const mixBus = audioContext.createGain();
+		mixBus.gain.setValueAtTime(1.35, now);
+
+		const compressor = audioContext.createDynamicsCompressor();
+		compressor.threshold.setValueAtTime(-24, now);
+		compressor.knee.setValueAtTime(18, now);
+		compressor.ratio.setValueAtTime(4, now);
+		compressor.attack.setValueAtTime(0.003, now);
+		compressor.release.setValueAtTime(0.16, now);
+
+		mixBus.connect(compressor);
+		compressor.connect(audioContext.destination);
+
 		const durationSeconds = 0.45;
 		const sampleRate = audioContext.sampleRate;
 		const frameCount = Math.floor(sampleRate * durationSeconds);
@@ -192,7 +209,7 @@ import {
 		source.connect(highpass);
 		highpass.connect(lowpass);
 		lowpass.connect(gain);
-		gain.connect(audioContext.destination);
+		gain.connect(mixBus);
 
 		source.start(now);
 		source.stop(now + durationSeconds);
@@ -219,7 +236,7 @@ import {
 			impactGain.gain.exponentialRampToValueAtTime(0.0001, t + 0.024);
 
 			impact.connect(impactGain);
-			impactGain.connect(audioContext.destination);
+			impactGain.connect(mixBus);
 			impact.start(t);
 			impact.stop(t + 0.03);
 		}
@@ -240,7 +257,7 @@ import {
 		settleGain.gain.exponentialRampToValueAtTime(0.0001, settleTime + 0.07);
 
 		settle.connect(settleGain);
-		settleGain.connect(audioContext.destination);
+		settleGain.connect(mixBus);
 		settle.start(settleTime);
 		settle.stop(settleTime + 0.08);
 	}

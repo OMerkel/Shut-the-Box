@@ -4,13 +4,15 @@ export const SOUND_LEVEL = Object.freeze({
 	OFF: "off",
 	SOFT: "soft",
 	NORMAL: "normal",
+	LOUD: "loud",
 });
 
 export function isSoundLevel(value) {
 	return (
 		value === SOUND_LEVEL.OFF ||
 		value === SOUND_LEVEL.SOFT ||
-		value === SOUND_LEVEL.NORMAL
+		value === SOUND_LEVEL.NORMAL ||
+		value === SOUND_LEVEL.LOUD
 	);
 }
 
@@ -27,6 +29,9 @@ export function getSoundGainMultiplier(soundLevel) {
 	}
 	if (soundLevel === SOUND_LEVEL.SOFT) {
 		return 0.6;
+	}
+	if (soundLevel === SOUND_LEVEL.LOUD) {
+		return 1.6;
 	}
 	return 1;
 }
