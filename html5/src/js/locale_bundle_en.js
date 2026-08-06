@@ -14,8 +14,8 @@
     languageEnglish: "English",
     languageGerman: "Deutsch",
     languageItalian: "Italiano",
-    languageFrench: "FranÃ§ais",
-    languageSpanish: "EspaÃ±ol",
+    languageFrench: "Français",
+    languageSpanish: "Español",
     soundHeading: "Sound",
     soundDescription: "Choose dice roll sound intensity.",
     soundLegend: "Dice Sound",
@@ -157,3 +157,4 @@
         </div>
       </div>`,
 });
+
