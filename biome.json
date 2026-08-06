@@ -1,0 +1,19 @@
+{
+    "$schema": "https://biomejs.dev/schemas/2.4.15/schema.json",
+    "files": {
+        "includes": [
+            "**",
+            "!**/node_modules",
+            "!**/coverage",
+            "!**/test-results"
+        ]
+    },
+    "formatter": {
+        "enabled": true,
+        "indentStyle": "space",
+        "indentWidth": 4
+    },
+    "linter": {
+        "enabled": true
+    }
+}
